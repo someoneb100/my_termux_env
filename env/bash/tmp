@@ -1,0 +1,2 @@
+export TMP="$HOME/env/.tmp"
+rm -rf $TMP/*

@@ -1,4 +1,4 @@
-..='cd ..'
-...='cd ../..'
-ll='ls -alFh'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -alFh'
 
