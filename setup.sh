@@ -3,6 +3,6 @@ echo "source ~/env/.profile_init" >> ~/.profile
 apt update
 apt install --assume-yes tmux git python nmap cowsay toilet
 cp -r env/ ~/env/
-cp gitconfig ~.gitconfig
-exit
+cp gitconfig ~/.gitconfig
+source ~/.profile
 
