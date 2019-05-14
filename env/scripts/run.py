@@ -30,11 +30,11 @@ class runner(object):
 				stamp = os.stat(self.filename).st_mtime
 				if stamp != cashed_stamp:
 					cashed_stamp = stamp
-					self.output = subprocess.run(self.command, stdout=subprocess.PIPE).stdout.decode("utf-8")
 					if not mute:
 						sys.stderr.write("\x1b[2J\x1b[H")
 						sys.stderr.flush()
-						print(self.output)
+						subprocess.run(self.command)
+					else: self.output = subprocess.run(self.command, stdout=subprocess.PIPE).stdout.decode("utf-8")
 				elif not mute:
 					if waitcount == 10:
 						print("\r          \r.", end='', flush=True, file=sys.stderr)

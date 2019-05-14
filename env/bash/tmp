@@ -1,2 +1,3 @@
 export TMP="$HOME/env/.tmp"
-rm -rf $TMP/*
+if [ -f "$TMP" ]; then rm -rf $TMP/*
+else mkdir $TMP; fi
