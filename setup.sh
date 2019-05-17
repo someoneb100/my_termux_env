@@ -1,5 +1,5 @@
 touch ~/.hushlogin
-echo 't=$(date -r ~/env/bash/ "+%m-%d-%y-%H-%M-%S")'
+echo 't=$(date -r ~/env/bash/ "+%m-%d-%y-%H-%M-%S")' >> ~/.profile
 echo 'if [ "$t" -ne "$(cat ~/env/.date)" ]; then python ~/env/.prepare.py "$t"; fi' >> ~/.profile
 echo 'source ~/env/.profile_init' >> ~/.profile
 apt update
