@@ -3,7 +3,7 @@ home = os.path.expanduser('~') + "/"
 env = home + 'env/'
 bash = env + 'bash/'
 profile = env + '.profile_init'
-t = env + '.date'
+time = env + '.date'
 
 s = ""
 for t in os.listdir(bash):
@@ -23,5 +23,5 @@ s = export + alias + rest
 with open(profile, "w+") as f:
 	f.write("\n".join(s))
 
-with open(t, "w+") as f:
+with open(time, "w+") as f:
 	f.write(sys.argv[1])
