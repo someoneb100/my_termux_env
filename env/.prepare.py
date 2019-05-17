@@ -1,27 +1,16 @@
-import os, sys
-home = os.path.expanduser('~') + "/"
-env = home + 'env/'
-bash = env + 'bash/'
-profile = env + '.profile_init'
-time = env + '.date'
+import os
+bash = os.path.expanduser('~') + "/env/"
+bash, profile = bash + 'bash/', bash + '.profile_init'
 
-s = ""
-for t in os.listdir(bash):
-	with open(bash + t) as f:
-		t = f.read()
-		s += t
-
-s = s.split('\n')
 export, alias, rest = [],[],[]
-for t in s:
-	f = t.split(' ')
-	if 'export' in f: export.append(t)
-	elif 'alias' in f: alias.append(t)
-	else: rest.append(t)
+for f in os.listdir(bash):
+	with open(bash + f, "r") as f:
+		for l in f:
+			l = l.rstrip()
+			if not l: continue
+			elif 'export' in l: export.append(l)
+			elif 'alias' in l: alias.append(l)
+			else: rest.append(l)
 
-s = export + alias + rest
 with open(profile, "w+") as f:
-	f.write("\n".join(s))
-
-with open(time, "w+") as f:
-	f.write(sys.argv[1])
+	f.write("\n".join(export + alias + rest))
