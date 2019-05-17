@@ -1,16 +1,13 @@
 import os, sys
-home = os.path.expanduser('~')
-env = home + '/env'
-bash = env + '/bash'
-profile = env + '/.profile_init'
-t = env + '/.date'
-
-with open(t, "w+") as f:
-	f.write(sys.argv[1])
+home = os.path.expanduser('~') + "/"
+env = home + 'env/'
+bash = env + 'bash/'
+profile = env + '.profile_init'
+t = env + '.date'
 
 s = ""
 for t in os.listdir(bash):
-	with open(t) as f:
+	with open(bash + t) as f:
 		t = f.read()
 		s += t
 
@@ -23,5 +20,8 @@ for t in s:
 	else: rest.append(t)
 
 s = export + alias + rest
-with open(profle, "w+") as f:
-	f.write(s.join("\n"))
+with open(profile, "w+") as f:
+	f.write("\n".join(s))
+
+with open(t, "w+") as f:
+	f.write(sys.argv[1])

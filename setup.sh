@@ -4,7 +4,7 @@ echo 'if [ "$t" -ne "$(cat ~/env/.date)" ]; then python ~/env/.prepare.py "$t"; 
 echo 'source ~/env/.profile_init' >> ~/.profile
 apt update
 apt install --assume-yes coreutils tmux git python nmap cowsay toilet vim clang flex bison ffmpeg pulseaudio
-pip install --yes yoitube-dl
+pip install youtube-dl
 cp -r env/ ~/env/
 cp gitconfig ~/.gitconfig
 termux-setup-storage
