@@ -1,0 +1,1 @@
+alias yt="youtube-dl --yes-playlist -x --audio-format mp3 --audio-quality 0 -o '$STORED/%(title)s.%(ext)s'"
