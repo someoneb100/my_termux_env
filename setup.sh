@@ -1,17 +1,14 @@
+termux-setup-storage
 apt update
 apt install --assume-yes coreutils tmux git python nmap cowsay toilet vim clang flex bison ffmpeg pulseaudio bat
 pip install youtube-dl
-cp -r env/ ~/env/
-touch ~/.hushlogin
 
-cat > ~/.profile <<EOF
-t='# '\$(date -r ~/env/bash "+%S%M%H%d%m%y")
-if [ "\$t" != "\$(head -1 ~/env/.profile_init)" ]; then
-	echo "\$t" > ~/env/.profile_init
-	python ~/env/.prepare.py; fi
-unset t
-source ~/env/.profile_init
-EOF
+mkdir ~/env ~/env/python_modules ~/env/scripts
+cp bash/ ~/env/bash/
+cp sh/profile ~/.profile
+cp sh/tmux-work.sh ~/env/scripts/
+touch ~/.hushlogin
+echo '# 0' > ~/env/.profile_init
 
 cat > ~/.gitconfig <<EOF
 [user]
@@ -19,5 +16,7 @@ cat > ~/.gitconfig <<EOF
 	name = someoneb100
 EOF
 
-echo '# 0' > ~/env/.profile_init
-termux-setup-storage
+python -O -m compileall py/
+mv py/__pycache__/prepare* ~/env/.prepare.pyc
+mv py/__pycache__/run* ~/env/scripts/run.pyc
+mv py/__pycache__/timer* ~/env/python_modules/timer.pyc
