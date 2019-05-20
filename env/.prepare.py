@@ -12,5 +12,5 @@ for f in os.listdir(bash):
 			elif 'alias' in l: alias.append(l)
 			else: rest.append(l)
 
-with open(profile, "w+") as f:
+with open(profile, "a") as f:
 	f.write("\n".join(export + alias + rest))
