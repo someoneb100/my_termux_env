@@ -4,7 +4,7 @@ apt install --assume-yes coreutils tmux git python nmap cowsay toilet vim clang 
 pip install youtube-dl
 
 mkdir ~/env ~/env/python_modules ~/env/scripts
-cp bash/ ~/env/bash/
+cp -r bash/ ~/env/bash/
 cp sh/profile ~/.profile
 cp sh/tmux-work.sh ~/env/scripts/
 touch ~/.hushlogin
