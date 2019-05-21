@@ -16,7 +16,7 @@ class runner(object):
 		elif extension == 'py':
 			self.command = 'python3 ' + filename + arguments
 		elif extension == 'c':
-			self.command = 'gcc ' + filename + ' -o $TMP/temp && $TMP/temp' + arguments
+			self.command = 'gcc ' + filename + ' -o $TMPDIR/temp && $TMPDIR/temp' + arguments
 		else:
 			print('Nepodrzana extenzija! Program radi sa .sh, .py i .c kodovima')
 			exit()

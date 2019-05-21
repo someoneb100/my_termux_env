@@ -1,2 +1,0 @@
-export TMP="$HOME/env/.tmp"
-if [ -d "$TMP" ]; then rm -rf $TMP/*; else mkdir $TMP; fi
