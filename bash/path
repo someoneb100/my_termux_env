@@ -1,2 +1,0 @@
-export PATH="$PATH:$HOME/env/scripts"
-export PYTHONPATH="$PYTHONPATH:$HOME/env/python_modules"

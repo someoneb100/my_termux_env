@@ -1,0 +1,4 @@
+export PYTHONPATH="$PYTHONPATH:$HOME/env/python_modules"
+export PYTHONDONTWRITEBYTECODE=True
+
+alias pycompile='python -O -m compileall -b -l'

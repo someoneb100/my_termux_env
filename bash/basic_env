@@ -1,4 +1,7 @@
+export PATH="$PATH:$HOME/env/scripts"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alFh'
 
+PS1="\t ~~> \w $ "
