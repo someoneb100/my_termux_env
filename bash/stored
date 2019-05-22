@@ -1,3 +1,4 @@
 export STORED="$HOME/storage/shared/Termux-env/"
 if [ ! -d "$STORED" ]; then mkdir $STORED; fi
 alias pull-stored="cp $STORED/* ."
+alias push-stored="cp -t $STORED"

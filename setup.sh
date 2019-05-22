@@ -3,6 +3,7 @@ apt update
 apt install --assume-yes coreutils tmux git python nmap cowsay toilet vim clang flex bison ffmpeg pulseaudio bat
 pip install youtube-dl
 
+mkdir ~/env
 cp -r bash/ python_modules/ scripts/ ~/env/
 cp profile ~/.profile
 touch ~/.hushlogin
