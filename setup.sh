@@ -1,7 +1,7 @@
 termux-setup-storage
 apt update
 apt install --assume-yes coreutils tmux git python nmap cowsay toilet vim clang flex bison ffmpeg pulseaudio bat
-pip install youtube-dl
+pip install youtube-dl node
 
 mkdir ~/env
 cp -r bash/ python_modules/ scripts/ ~/env/

@@ -3,5 +3,6 @@ export PATH="$PATH:$HOME/env/scripts"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alFh'
+alias rm='rm -rf'
 
 PS1="\t ~~> \w $ "
